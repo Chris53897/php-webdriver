@@ -32,6 +32,10 @@ class WebDriverWindowTest extends WebDriverTestCase
 
     public function testShouldMaximizeWindow(): void
     {
+        $this->driver->manage()
+            ->window()
+            ->setSize(new WebDriverDimension(400, 300));
+
         $sizeBefore = $this->driver->manage()
             ->window()
             ->getSize();
