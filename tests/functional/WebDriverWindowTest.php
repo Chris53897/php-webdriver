@@ -48,6 +48,7 @@ class WebDriverWindowTest extends WebDriverTestCase
             ->window()
             ->getSize();
 
+        # Failed asserting that 800 is equal to 1024 or is greater than 1024.
         $this->assertGreaterThanOrEqual($sizeBefore->getWidth(), $sizeAfter->getWidth());
         $this->assertGreaterThanOrEqual($sizeBefore->getHeight(), $sizeAfter->getHeight());
     }
@@ -55,6 +56,7 @@ class WebDriverWindowTest extends WebDriverTestCase
     /**
      * @group exclude-edge
      * @group exclude-saucelabs
+     * @runInSeparateProcess
      */
     public function testShouldFullscreenWindow(): void
     {
@@ -98,6 +100,7 @@ class WebDriverWindowTest extends WebDriverTestCase
 
     /**
      * @group exclude-saucelabs
+     * @runInSeparateProcess
      */
     public function testShouldSetSize(): void
     {
@@ -121,6 +124,7 @@ class WebDriverWindowTest extends WebDriverTestCase
 
     /**
      * @todo Skip when running headless mode
+     * @runInSeparateProcess
      */
     public function testShouldSetWindowPosition(): void
     {
